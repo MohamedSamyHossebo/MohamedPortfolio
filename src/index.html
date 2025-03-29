@@ -1,13 +1,67 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Portfolio</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="./assets//mohamed.webp">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mohamed Samy | Frontend Developer Portfolio</title>
+
+  <!-- Meta Tags for SEO -->
+  <meta name="description"
+    content="A professional frontend developer portfolio showcasing projects built using Angular and modern web technologies.">
+  <meta name="keywords" content="Frontend Developer, Angular, Web Development, Portfolio, Mohamed Samy">
+  <meta name="author" content="Mohamed Samy">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Open Graph (OG) Meta Tags -->
+  <meta property="og:title" content="Mohamed Samy | Frontend Developer Portfolio">
+  <meta property="og:description"
+    content="Explore my latest web development projects built using Angular, Tailwind CSS, and modern web tools.">
+  <meta property="og:image" content="./assets/mohamed.webp">
+  <meta property="og:url" content="https://mohamed-portfolio.com">
+  <meta property="og:type" content="website">
+  <!-- Facebook Meta Tags -->
+  <meta property="fb:app_id" content="YOUR_FACEBOOK_APP_ID"> <!-- استبدل بـ App ID لو عندك -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- LinkedIn Meta Tags -->
+  <meta property="og:title" content="Mohamed Samy | Frontend Developer Portfolio">
+  <meta property="og:description"
+    content="Discover modern web applications and frontend projects built using Angular, Tailwind CSS, and more.">
+  <meta property="og:image" content="./assets/mohamed.webp">
+  <meta property="og:url" content="https://mohamed-portfolio.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mohamed Samy | Frontend Developer Portfolio">
+  <meta name="twitter:description" content="Explore my latest Angular and web development projects.">
+  <meta name="twitter:image" content="./assets/mohamed.webp">
+  <meta name="twitter:creator" content="@Mohamed_Samy">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="./assets/mohamed.webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/mohamed.webp">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Additional Accessibility -->
+  <meta name="theme-color" content="#17171F">
+  <meta name="color-scheme" content="dark light">
 </head>
+
 <body class="bg-body text-white font-poppins pb-12">
   <app-root></app-root>
+
+  <!-- Accessibility Script -->
+  <script>
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Tab') {
+        document.body.classList.add('show-focus-outline');
+      }
+    });
+  </script>
 </body>
+
 </html>
