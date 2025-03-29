@@ -2,8 +2,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
     box-sizing: border-box;
+}
+
+@layer utilities {
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+    }
+
+    /* لون الخلفية */
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 8px;
+    }
+
+   
 }
 
 .left-percentage {
@@ -88,4 +110,3 @@ body {
         animation: ease-in-out 30s;
     }
 }
-
