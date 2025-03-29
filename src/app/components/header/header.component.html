@@ -1,0 +1,55 @@
+
+<header class="py-6 fixed top-0 w-full bg-body z-50">
+    <div class="container flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
+        <div class="text-lg font-bold cursor-pointer  animate-colorPulse" (click)="scrollTo('hero')">Mohamed.Samy</div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-12 items-center">
+            <a (click)="scrollTo('hero')" [class.text-theme]="activeSection === 'hero'"
+                class="cursor-pointer hover:text-theme transition-colors">Home</a>
+
+            <a (click)="scrollTo('work')" [class.text-theme]="activeSection === 'work'"
+                class="cursor-pointer hover:text-theme transition-colors">My Work</a>
+
+            <a (click)="scrollTo('clients')" [class.text-theme]="activeSection === 'clients'"
+                class="cursor-pointer hover:text-theme transition-colors">Clients</a>
+
+            <a (click)="scrollTo('hire')" class="cursor-pointer">
+                <button class="px-6 py-2 bg-theme font-bold hover:bg-blue-600 transition-colors">Hire me</button>
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button (click)="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none">
+                <svg width="26" height="18" viewBox="0 0 26 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13 17.5H0.25V14.6667H13V17.5ZM25.75 10.4167H0.25V7.58333H25.75V10.4167ZM25.75 3.33333H13V0.5H25.75V3.33333Z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden fixed inset-0 bg-body z-40 transition-all duration-300" [class.invisible]="!isMenuOpen"
+        [class.opacity-0]="!isMenuOpen">
+        <div class="container mx-auto px-8 pt-24 pb-12 h-full flex flex-col">
+            <a (click)="scrollTo('hero')" [class.text-theme]="activeSection === 'hero'"
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">Home</a>
+
+            <a (click)="scrollTo('work')" [class.text-theme]="activeSection === 'work'"
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">My Work</a>
+
+            <a (click)="scrollTo('clients')" [class.text-theme]="activeSection === 'clients'"
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">Clients</a>
+
+            <a (click)="scrollTo('hire')" [class.text-theme]="activeSection === 'hire'"
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">Hire Me</a>
+
+            <button (click)="isMenuOpen = false"
+                class="mt-auto self-center px-8 py-3 border border-theme text-theme rounded-lg hover:bg-theme hover:text-white transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+</header>
