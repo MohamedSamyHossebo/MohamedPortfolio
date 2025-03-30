@@ -19,7 +19,6 @@ export class WorkComponent {
     { name: 'Carousel', url: 'https://mohamedsamyhossebo.github.io/Carousel/', image: './assets/carousel.webp' },
     { name: 'Crud System', url: 'https://mohamedsamyhossebo.github.io/Crud-System/', image: './assets/Document.webp' },
     { name: 'Egyptian Party', url: 'https://mohamedsamyhossebo.github.io/Party/', image: './assets/Egyptian-Party.webp' },
-    { name: 'GitHub Search', url: '#', image: './assets/GithubSearch.webp' },
     { name: 'QR Code Login', url: 'https://mohamedsamyhossebo.github.io/Qr-Code/', image: './assets/Login-QR-Code-Demo.webp' }
   ];
 }
