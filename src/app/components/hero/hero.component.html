@@ -1,50 +1,45 @@
-<section id="hero">
+<section id="hero" aria-labelledby="hero-title">
     <div class="container pb-0 mb-0 mt-36 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
         <div class="flex flex-wrap md:flex-nowrap">
-            <nav class=" lg:mr-24 lg:w-4 lg:inline-block md:inline-block fixed hidden  left-percentage  xl:block z-50">
+            <nav aria-label="Page Sections Navigation"
+                class="lg:mr-24 lg:w-4 lg:inline-block md:inline-block fixed hidden left-percentage xl:block z-50">
                 <div class="absolute left-50 transform -translate-x-1/2 space-y-6 mt-36">
-                    <!-- Home Dot -->
                     <a (click)="scrollTo('hero')"
                         class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body cursor-pointer relative group"
-                        [class.selected-circle]="activeSection === 'hero'">
+                        [class.selected-circle]="activeSection === 'hero'" aria-label="Go to Home section">
                         <span
                             class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Home</span>
                     </a>
-
-                    <!-- Work Dot -->
                     <a (click)="scrollTo('work')"
                         class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body cursor-pointer relative group"
-                        [class.selected-circle]="activeSection === 'work'">
+                        [class.selected-circle]="activeSection === 'work'" aria-label="Go to Work section">
                         <span
                             class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Work</span>
                     </a>
-
-                    <!-- Clients Dot -->
                     <a (click)="scrollTo('clients')"
                         class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body cursor-pointer relative group"
-                        [class.selected-circle]="activeSection === 'clients'">
+                        [class.selected-circle]="activeSection === 'clients'" aria-label="Go to Clients section">
                         <span
                             class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Clients</span>
                     </a>
-
-                    <!-- Hire Dot -->
                     <a (click)="scrollTo('hire')"
                         class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body cursor-pointer relative group"
-                        [class.selected-circle]="activeSection === 'hire'">
+                        [class.selected-circle]="activeSection === 'hire'" aria-label="Go to Hire section">
                         <span
                             class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Hire</span>
                     </a>
                 </div>
             </nav>
-            <div class="flex flex-wrap lg:ml-20  justify-center md:justify-start max-w-xl mt-0 md:my-36">
-                <h1 class="font-bold text-5xl md:text-6xl lg:text-7xl text-center md:text-left">Building<br> beautiful
-                    web experiences.</h1>
+            <div class="flex flex-wrap lg:ml-20 justify-center md:justify-start max-w-xl mt-0 md:my-36">
+                <h1 id="hero-title" class="font-bold text-5xl md:text-6xl lg:text-7xl text-center md:text-left">
+                    Building<br> beautiful web experiences.</h1>
                 <div class="w-full flex justify-center md:justify-start">
                     <button id="downloadBtn" (click)="downloadCV()"
-                        class="px-8 py-4 bg-theme text-white font-bold mt-12 flex items-center space-x-3">
+                        class="px-8 py-4 bg-theme text-white font-bold mt-12 flex items-center space-x-3"
+                        aria-label="Download CV">
                         <div>
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
                                 <path
                                     d="M14.4375 11C14.4375 11.9117 14.0753 12.786 13.4307 13.4307C12.786 14.0753 11.9117 14.4375 11 14.4375C10.0883 14.4375 9.21398 14.0753 8.56932 13.4307C7.92466 12.786 7.5625 11.9117 7.5625 11C7.5625 10.0883 7.92466 9.21398 8.56932 8.56932C9.21398 7.92466 10.0883 7.5625 11 7.5625C11.9117 7.5625 12.786 7.92466 13.4307 8.56932C14.0753 9.21398 14.4375 10.0883 14.4375 11Z"
                                     fill="white" />
@@ -57,27 +52,26 @@
                     </button>
                 </div>
             </div>
-            <div class=" flex flex-wrap card mt-6 md:absolute md:mt-0 m-auto  -z-10">
-                <img loading="lazy" src="./assets/mohamed.webp" alt="My profile picture">
+            <div class="flex flex-wrap card mt-6 md:absolute md:mt-0 m-auto">
+                <img loading="lazy" decoding="async" src="./assets/mohamed.webp"
+                    alt="Profile picture of Mohamed, a front-end developer">
             </div>
         </div>
     </div>
 </section>
+
 <article>
     <div class="paragraph mt-0 typewriter">
-        <p class="section-paragraph ">Meet <span class="text-white">Mohamed</span> , an accomplished front-end developer
-            renowned for his
-            exemplary work in numerous projects. Proficient in utilizing <span class="text-white">Angular</span> and
-            <span class="text-white">Bootstrap</span> and <span class="text-white">TailwindCSS</span> , Mohamed
-            consistently delivers outstanding user interfaces that seamlessly blend functionality and
-            aesthetics. His meticulous attention to detail is evident in the precision of his designs, ensuring
-            a user-friendly and visually appealing experience. Mohamed's adept use of Angular results in modular
-            and maintainable code, fostering effective collaboration with back-end developers. By integrating
-            Bootstrap seamlessly, he expedites the development process and ensures a consistent, polished
-            appearance across various devices. Mohamed's projects receive acclaim for their dynamic features,
-            responsive designs, and overall user satisfaction. Committed to staying abreast of the latest
-            front-end technologies, Mohamed's creative approach and technical expertise make him an invaluable
-            contributor to the success of web solutions.
-        </p>
+        <p class="section-paragraph">Meet <span class="text-white">Mohamed</span>, an accomplished front-end developer
+            renowned for his exemplary work in numerous projects. Proficient in utilizing <span
+                class="text-white">Angular</span>, <span class="text-white">Bootstrap</span>, and <span
+                class="text-white">TailwindCSS</span>, Mohamed consistently delivers outstanding user interfaces that
+            seamlessly blend functionality and aesthetics. His meticulous attention to detail ensures a user-friendly
+            and visually appealing experience. Mohamed's adept use of Angular results in modular and maintainable code,
+            fostering effective collaboration with back-end developers. By integrating Bootstrap seamlessly, he
+            expedites the development process and ensures a consistent, polished appearance across various devices.
+            Mohamed's projects receive acclaim for their dynamic features, responsive designs, and overall user
+            satisfaction. Committed to staying abreast of the latest front-end technologies, Mohamed's creative approach
+            and technical expertise make him an invaluable contributor to the success of web solutions.</p>
     </div>
 </article>

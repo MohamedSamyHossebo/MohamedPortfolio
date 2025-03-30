@@ -1,28 +1,31 @@
-
-<header class="py-6 fixed top-0 w-full bg-body z-50">
+<header class="py-6 fixed top-0 w-full bg-body z-50" role="navigation">
     <div class="container flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
-        <div class="text-lg font-bold cursor-pointer  animate-colorPulse" (click)="scrollTo('hero')">Mohamed.Samy</div>
+        <div class="text-lg font-bold cursor-pointer animate-colorPulse" (click)="scrollTo('hero')"
+            aria-label="Go to Home section">Mohamed.Samy</div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-12 items-center">
+        <nav class="hidden md:flex space-x-12 items-center" aria-label="Main Navigation">
             <a (click)="scrollTo('hero')" [class.text-theme]="activeSection === 'hero'"
-                class="cursor-pointer hover:text-theme transition-colors">Home</a>
+                class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to Home section">Home</a>
 
             <a (click)="scrollTo('work')" [class.text-theme]="activeSection === 'work'"
-                class="cursor-pointer hover:text-theme transition-colors">My Work</a>
+                class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to My Work section">My Work</a>
 
             <a (click)="scrollTo('clients')" [class.text-theme]="activeSection === 'clients'"
-                class="cursor-pointer hover:text-theme transition-colors">Clients</a>
+                class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to Clients section">Clients</a>
 
             <a (click)="scrollTo('hire')" class="cursor-pointer">
-                <button class="px-6 py-2 bg-theme font-bold hover:bg-blue-600 transition-colors">Hire me</button>
+                <button class="px-6 py-2 bg-theme font-bold hover:bg-blue-600 transition-colors"
+                    aria-label="Hire Me">Hire me</button>
             </a>
-        </div>
+        </nav>
 
         <!-- Mobile Menu Button -->
         <div class="md:hidden">
-            <button (click)="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none">
-                <svg width="26" height="18" viewBox="0 0 26 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <button (click)="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none focus-visible:outline-none"
+                aria-label="Toggle mobile menu" [attr.aria-expanded]="isMenuOpen" aria-controls="mobile-menu">
+                <svg width="26" height="18" viewBox="0 0 26 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
                     <path
                         d="M13 17.5H0.25V14.6667H13V17.5ZM25.75 10.4167H0.25V7.58333H25.75V10.4167ZM25.75 3.33333H13V0.5H25.75V3.33333Z" />
                 </svg>
@@ -31,23 +34,28 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div class="md:hidden fixed inset-0 bg-body z-40 transition-all duration-300" [class.invisible]="!isMenuOpen"
-        [class.opacity-0]="!isMenuOpen">
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-body z-40 transition-opacity duration-300 ease-in-out"
+        [class.invisible]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
         <div class="container mx-auto px-8 pt-24 pb-12 h-full flex flex-col">
             <a (click)="scrollTo('hero')" [class.text-theme]="activeSection === 'hero'"
-                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">Home</a>
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
+                aria-label="Go to Home section">Home</a>
 
             <a (click)="scrollTo('work')" [class.text-theme]="activeSection === 'work'"
-                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">My Work</a>
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
+                aria-label="Go to My Work section">My Work</a>
 
             <a (click)="scrollTo('clients')" [class.text-theme]="activeSection === 'clients'"
-                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">Clients</a>
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
+                aria-label="Go to Clients section">Clients</a>
 
             <a (click)="scrollTo('hire')" [class.text-theme]="activeSection === 'hire'"
-                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold">Hire Me</a>
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
+                aria-label="Go to Hire Me section">Hire Me</a>
 
             <button (click)="isMenuOpen = false"
-                class="mt-auto self-center px-8 py-3 border border-theme text-theme rounded-lg hover:bg-theme hover:text-white transition-colors">
+                class="mt-auto self-center px-8 py-3 border border-theme text-theme rounded-lg hover:bg-theme hover:text-white transition-colors"
+                aria-label="Close menu">
                 Close
             </button>
         </div>
