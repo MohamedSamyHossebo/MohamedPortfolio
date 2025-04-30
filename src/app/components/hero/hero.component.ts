@@ -28,8 +28,8 @@ export class HeroComponent implements AfterViewInit {
   downloadCV(): void {
     if (isPlatformBrowser(this.platformId)) {
       const link = document.createElement('a');
-      link.href = 'assets/pdf/Mohamed-Samy-CV.pdf';
-      link.download = 'Mohamed-Samy-CV.pdf';
+      link.href = 'assets/pdf/Mohamed_Samy_CV.pdf';
+      link.download = 'Mohamed_Samy_CV.pdf';
       link.click();
     }
   }
