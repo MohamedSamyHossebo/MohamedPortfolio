@@ -16,6 +16,13 @@
                         <span
                             class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Work</span>
                     </a>
+                    <a (click)="scrollTo('experience')"
+                        class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body cursor-pointer relative group"
+                        [class.selected-circle]="activeSection === 'experience'" aria-label="Go to Experience section">
+                        <span
+                            class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Experience</span>
+                    </a>
+
                     <a (click)="scrollTo('clients')"
                         class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body cursor-pointer relative group"
                         [class.selected-circle]="activeSection === 'clients'" aria-label="Go to Clients section">

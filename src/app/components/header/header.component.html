@@ -10,6 +10,9 @@
 
             <a (click)="scrollTo('work')" [class.text-theme]="activeSection === 'work'"
                 class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to My Work section">My Work</a>
+            <a (click)="scrollTo('experience')" [class.text-theme]="activeSection === 'experience'"
+                class="cursor-pointer hover:text-theme transition-colors"
+                aria-label="Go to Experience section">Experience</a>
 
             <a (click)="scrollTo('clients')" [class.text-theme]="activeSection === 'clients'"
                 class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to Clients section">Clients</a>
@@ -48,6 +51,10 @@
             <a (click)="scrollTo('clients')" [class.text-theme]="activeSection === 'clients'"
                 class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
                 aria-label="Go to Clients section">Clients</a>
+                <a (click)="scrollTo('experience')" [class.text-theme]="activeSection === 'experience'"
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
+                aria-label="Go to Experience section">Experience</a>
+
 
             <a (click)="scrollTo('hire')" [class.text-theme]="activeSection === 'hire'"
                 class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"

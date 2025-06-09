@@ -44,7 +44,7 @@ export class HeroComponent implements AfterViewInit {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    const sections = ['hero', 'work', 'clients', 'hire'];
+    const sections = ['hero', 'work','experience', 'clients', 'hire'];
     const currentPosition = window.scrollY + 100;
 
     for (const section of sections) {
