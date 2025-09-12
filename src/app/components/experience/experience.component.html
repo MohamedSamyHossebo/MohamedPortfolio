@@ -1,29 +1,138 @@
-<div class="container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
+<div class="container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
     <section class="w-full" aria-labelledby="experience">
         <h2 id="experience" class="secondary-title">Experience</h2>
         <p class="section-paragraph">Professional Experience</p>
-        
-        <!-- Clients -->
-        <div class="space-y-12 my-16">
-            <article class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap">
-                <!-- Client logo -->
-                <figure class="mb-6 lg:mb-0">
-                    <img src="assets/bidsline.jpeg" class="w-20 h-20" alt="Bidsline Technology Logo">
-                    <figcaption class="sr-only">Bidsline Technology</figcaption>
-                </figure>
-                
-                <!-- Client info -->
-                <div class="flex flex-wrap justify-center text-center lg:text-left lg:block">
-                    <h3 class="text-white text-3xl font-semibold">Bidsline Technology</h3>
-                    
-                    <div class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 mt-6 mb-8">
-                        <div class="badge" role="status">Front-End Developer</div>
-                        <div class="badge" role="status">2025/5/26</div>
-                        <div class="badge" role="status">Current</div>
 
+        <!-- Timeline Container -->
+        <div class="relative my-16">
+            <!-- Timeline Line -->
+            <div class="timeline-line absolute left-8 md:left-12 top-0 bottom-0 w-0.5 z-0"></div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-12">
+
+                <!-- Current Position -->
+                <article class="relative flex items-start">
+                    <!-- Timeline Dot -->
+                    <div class="timeline-dot absolute left-6 md:left-10 w-4 h-4 rounded-full z-10 mt-6"></div>
+
+                    <!-- Timeline Card -->
+                    <div class="timeline-card ml-16 md:ml-24 w-full rounded-lg p-6 lg:p-8">
+                        <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+                            <!-- Company Logo -->
+                            <figure class="flex-shrink-0">
+                                <img src="assets/bidsline.jpeg"
+                                    class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg object-cover"
+                                    alt="Bidsline Technology Logo">
+                                <figcaption class="sr-only">Bidsline Technology</figcaption>
+                            </figure>
+
+                            <!-- Job Details -->
+                            <div class="flex-grow">
+                                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                                    <h3 class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0">
+                                        Bidsline Technology
+                                    </h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <span>May 2025 - Present</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-3 mb-4">
+                                    <div class="badge bg-indigo-600">Front-End Team Lead</div>
+                                    <div class="badge bg-indigo-600">Full-time</div>
+                                    <div class="badge bg-green-600">Current</div>
+
+                                </div>
+
+                                <p class="text-gray-300 text-sm lg:text-base leading-relaxed">
+                                    Leading the front-end development team, architecting scalable user interfaces, and
+                                    implementing modern web technologies to deliver exceptional user experiences.
+                                </p>
+
+                                <!-- Skills/Technologies -->
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Angular</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">TypeScript</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">PrimeNG</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Tailwind CSS</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Socket IO</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Team
+                                        Leadership</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+
+                <!-- Previous Position Example -->
+                <article class="relative flex items-start">
+                    <!-- Timeline Dot -->
+                    <div class="absolute left-6 md:left-10 w-4 h-4 rounded-full bg-gray-500 z-10 mt-6"></div>
+
+                    <!-- Timeline Card -->
+                    <div class="timeline-card ml-16 md:ml-24 w-full rounded-lg p-6 lg:p-8 opacity-75">
+                        <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+                            <!-- Company Logo Placeholder -->
+                            <figure class="flex-shrink-0">
+                                <div
+                                    class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg bg-gray-600 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <figcaption class="sr-only">Previous Company</figcaption>
+                            </figure>
+
+                            <!-- Job Details -->
+                            <div class="flex-grow">
+                                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                                    <h3 class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0">
+                                        Freelancer
+                                    </h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <span>2023 - Present</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-3 mb-4">
+                                    <div class="badge">Junior Developer</div>
+                                    <div class="badge">Full-time</div>
+                                </div>
+
+                                <p class="text-gray-400 text-sm lg:text-base leading-relaxed">
+                                    Developed and maintained complex web applications, collaborated with
+                                    cross-functional teams.
+                                </p>
+
+                                <!-- Skills/Technologies -->
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Angular</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">TypeScript</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">JavaScript</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">HTML5</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Tailwind
+                                        CSS</span>
+                                    <span class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 </div>
