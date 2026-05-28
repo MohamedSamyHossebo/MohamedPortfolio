@@ -1,11 +1,11 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Component, AfterViewInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
     selector: 'app-experience',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './experience.component.html',
     styleUrl: './experience.component.css'
 })
