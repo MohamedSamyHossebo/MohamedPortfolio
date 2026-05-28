@@ -7,11 +7,10 @@ import { HireComponent } from "../hire/hire.component";
 import { ExperienceComponent } from "../experience/experience.component";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [HeaderComponent, HeroComponent, WorkComponent, ClientsComponent, HireComponent, ExperienceComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [HeaderComponent, HeroComponent, WorkComponent, ClientsComponent, HireComponent, ExperienceComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent {
 

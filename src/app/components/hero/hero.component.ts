@@ -7,11 +7,10 @@ import { TextPlugin } from 'gsap/TextPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-hero',
-  standalone: true,
-  imports: [],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+    selector: 'app-hero',
+    imports: [],
+    templateUrl: './hero.component.html',
+    styleUrl: './hero.component.css'
 })
 export class HeroComponent implements AfterViewInit, OnDestroy {
   activeSection = 'hero';

@@ -4,11 +4,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-experience',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css'
+    selector: 'app-experience',
+    imports: [CommonModule],
+    templateUrl: './experience.component.html',
+    styleUrl: './experience.component.css'
 })
 export class ExperienceComponent implements AfterViewInit, OnDestroy {
   experiencesDate = new Date();

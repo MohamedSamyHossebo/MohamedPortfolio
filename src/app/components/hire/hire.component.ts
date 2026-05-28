@@ -5,11 +5,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-hire',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './hire.component.html',
-  styleUrl: './hire.component.css'
+    selector: 'app-hire',
+    imports: [ReactiveFormsModule],
+    templateUrl: './hire.component.html',
+    styleUrl: './hire.component.css'
 })
 export class HireComponent implements AfterViewInit, OnDestroy {
   fb = inject(FormBuilder);

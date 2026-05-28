@@ -4,11 +4,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-clients',
-  standalone: true,
-  imports: [],
-  templateUrl: './clients.component.html',
-  styleUrl: './clients.component.css'
+    selector: 'app-clients',
+    imports: [],
+    templateUrl: './clients.component.html',
+    styleUrl: './clients.component.css'
 })
 export class ClientsComponent implements AfterViewInit, OnDestroy {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {

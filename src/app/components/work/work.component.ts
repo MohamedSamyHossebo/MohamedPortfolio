@@ -4,11 +4,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-work',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './work.component.html',
-  styleUrl: './work.component.css'
+    selector: 'app-work',
+    imports: [CommonModule],
+    templateUrl: './work.component.html',
+    styleUrl: './work.component.css'
 })
 export class WorkComponent implements AfterViewInit, OnDestroy {
   projects = [
