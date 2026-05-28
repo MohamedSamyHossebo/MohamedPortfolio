@@ -1,37 +1,39 @@
 <div
-  class="container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
+  class="experience-section container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
 >
   <section class="w-full" aria-labelledby="experience">
-    <h2 id="experience" class="secondary-title">Experience</h2>
-    <p class="section-paragraph">Professional Experience</p>
+    <div class="experience-header">
+      <h2 id="experience" class="secondary-title">Experience</h2>
+      <p class="section-paragraph">Professional Experience</p>
+    </div>
 
     <!-- Timeline Container -->
-    <div class="relative my-16">
+    <div class="experience-timeline relative my-16">
       <!-- Timeline Line -->
       <div
-        class="timeline-line absolute left-8 md:left-12 top-0 bottom-0 w-0.5 z-0"
+        class="timeline-line absolute left-8 md:left-12 top-0 bottom-0 w-[2px] bg-nav z-0 -translate-x-1/2"
       ></div>
 
       <!-- Timeline Items -->
       <div class="space-y-12">
         <!-- Current Position -->
-        <article class="relative flex items-start">
+        <article class="experience-item relative flex items-start group">
           <!-- Timeline Dot -->
           <div
-            class="timeline-dot absolute left-6 md:left-10 w-4 h-4 rounded-full z-10 mt-6"
+            class="timeline-dot absolute left-8 md:left-12 w-4 h-4 rounded-full bg-theme shadow-glow z-10 mt-6 -translate-x-1/2 group-hover:scale-125 transition-transform duration-300"
           ></div>
 
           <!-- Timeline Card -->
           <div
-            class="timeline-card ml-16 md:ml-24 w-full rounded-lg p-6 lg:p-8"
+            class="timeline-card ml-16 md:ml-24 w-full rounded-xl p-6 lg:p-8 bg-input/50 backdrop-blur-sm border border-white/10 hover:border-theme/50 transition-all duration-300 hover:shadow-glow"
           >
             <div class="flex flex-col lg:flex-row lg:items-start gap-6">
               <!-- Company Logo -->
               <figure class="flex-shrink-0">
-                <a href="https://www.linkedin.com/company/alyaqeentech" target="_blank">
+                <a href="https://www.linkedin.com/company/alyaqeentech" target="_blank" class="block overflow-hidden rounded-lg">
                   <img
                     src="assets/alyaqeen-logo.jpeg"
-                    class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg object-cover"
+                    class="w-16 h-16 lg:w-20 lg:h-20 object-cover transform hover:scale-110 transition-transform duration-500"
                     alt="Alyaqeen Technology Logo"
                   />
                 </a>
@@ -44,11 +46,11 @@
                   class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
                 >
                   <h3
-                    class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0"
+                    class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0 group-hover:text-selected-text transition-colors duration-300"
                   >
                     Alyaqeen Technology
                   </h3>
-                  <div class="flex items-center gap-2 text-sm text-gray-400">
+                  <div class="flex items-center gap-2 text-sm text-secondary">
                     <svg
                       class="w-4 h-4"
                       fill="none"
@@ -67,53 +69,53 @@
                 </div>
 
                 <div class="flex flex-wrap gap-3 mb-4">
-                  <div class="badge bg-indigo-600">Mid-Level Front End Developer</div>
-                  <div class="badge bg-indigo-600">Full-time</div>
-                  <div class="badge bg-green-600">Current</div>
+                  <div class="badge bg-theme/30 text-white border border-theme/50">Mid-Level Front End Developer</div>
+                  <div class="badge bg-badge/50">Full-time</div>
+                  <div class="badge bg-green-500/20 text-green-400 border border-green-500/30">Current</div>
                 </div>
 
-                <p class="text-gray-300 text-sm lg:text-base leading-relaxed">
+                <p class="text-secondary text-sm lg:text-base leading-relaxed">
                   Orchestrating the front-end development process, architecting scalable
                   user interfaces, and implementing modern web technologies to
                   deliver exceptional user experiences.
                 </p>
 
                 <!-- Skills/Technologies -->
-                <div class="mt-4 flex flex-wrap gap-2">
+                <div class="mt-6 flex flex-wrap gap-2">
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Angular</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >React.js</span
                   >
                    <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Next.js</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >TypeScript</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >PrimeNG</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Tailwind CSS</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Shadcn</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Socket IO</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Team Leadership</span
                   >
                 </div>
@@ -122,25 +124,25 @@
           </div>
         </article>
 
-        <!-- Previous Position Example -->
-        <article class="relative flex items-start">
+        <!-- Previous Position -->
+        <article class="experience-item relative flex items-start group">
           <!-- Timeline Dot -->
           <div
-            class="absolute left-6 md:left-10 w-4 h-4 rounded-full bg-gray-500 z-10 mt-6"
+            class="absolute left-8 md:left-12 w-4 h-4 rounded-full bg-secondary/30 z-10 mt-6 -translate-x-1/2 group-hover:scale-125 transition-transform duration-300"
           ></div>
 
           <!-- Timeline Card -->
           <div
-            class="timeline-card ml-16 md:ml-24 w-full rounded-lg p-6 lg:p-8 opacity-75"
+            class="timeline-card ml-16 md:ml-24 w-full rounded-xl p-6 lg:p-8 bg-input/30 backdrop-blur-sm border border-white/5 hover:border-theme/30 transition-all duration-300 hover:shadow-glow"
           >
             <div class="flex flex-col lg:flex-row lg:items-start gap-6">
               <!-- Company Logo Placeholder -->
               <figure class="flex-shrink-0">
                 <div
-                  class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg bg-gray-600 flex items-center justify-center"
+                  class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg bg-nav/50 flex items-center justify-center border border-white/5 group-hover:border-theme/30 transition-colors"
                 >
                   <svg
-                    class="w-8 h-8 text-gray-400"
+                    class="w-8 h-8 text-secondary"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -162,11 +164,11 @@
                   class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
                 >
                   <h3
-                    class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0"
+                    class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0 group-hover:text-selected-text transition-colors duration-300"
                   >
                     Freelancer
                   </h3>
-                  <div class="flex items-center gap-2 text-sm text-gray-400">
+                  <div class="flex items-center gap-2 text-sm text-secondary">
                     <svg
                       class="w-4 h-4"
                       fill="none"
@@ -180,44 +182,44 @@
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       ></path>
                     </svg>
-                    <span>2023 - Present</span>
+                    <span>2023 - 2025</span>
                   </div>
                 </div>
 
                 <div class="flex flex-wrap gap-3 mb-4">
-                  <div class="badge">Junior Developer</div>
-                  <div class="badge">Full-time</div>
+                  <div class="badge bg-nav/50">Junior Developer</div>
+                  <div class="badge bg-nav/50">Full-time</div>
                 </div>
 
-                <p class="text-gray-400 text-sm lg:text-base leading-relaxed">
+                <p class="text-secondary text-sm lg:text-base leading-relaxed">
                   Developed and maintained complex web applications,
                   collaborated with cross-functional teams.
                 </p>
 
                 <!-- Skills/Technologies -->
-                <div class="mt-4 flex flex-wrap gap-2">
+                <div class="mt-6 flex flex-wrap gap-2">
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Angular</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >TypeScript</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >JavaScript</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >HTML5</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Tailwind CSS</span
                   >
                   <span
-                    class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded"
+                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
                     >Bootstrap</span
                   >
                 </div>

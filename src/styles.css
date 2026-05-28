@@ -28,18 +28,25 @@
    
 }
 
+body {
+    @apply font-poppins text-white leading-relaxed tracking-wide;
+    background-color: #17171F;
+}
+
 .left-percentage {
     left: 2%;
 }
 
 img {
     width: 500px;
-    height: fit-content;
+    height: auto;
+    @apply rounded-lg shadow-glow;
 }
 
 html,
 body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .card {
@@ -57,20 +64,20 @@ body {
 }
 
 .secondary-title {
-    @apply text-3xl font-bold;
+    @apply text-3xl md:text-4xl font-bold mb-8;
 }
 
 .secondary-title::before {
     content: "";
-    @apply block w-12 h-2 bg-theme rounded-full mb-1;
+    @apply block w-16 h-1.5 bg-theme rounded-full mb-3;
 }
 
 .section-paragraph {
-    @apply text-secondary my-6 w-full max-w-3xl;
+    @apply text-secondary my-8 w-full max-w-3xl text-lg leading-relaxed;
 }
 
 .badge {
-    @apply px-4 py-2 text-sm rounded bg-badge;
+    @apply px-4 py-2 text-sm rounded bg-badge transition-all duration-300 hover:bg-theme;
 }
 
 [id] {
@@ -94,11 +101,11 @@ body {
 }
 
 .nav-dot {
-    transition: background 200ms, border-color 200ms;
+    @apply transition-all duration-300;
 }
 
 .selected-circle {
-    @apply border-theme bg-theme;
+    @apply border-theme bg-theme shadow-glow;
 }
 
 .nav-dot:hover span {
@@ -107,6 +114,21 @@ body {
 
 .projects {
     img {
-        animation: ease-in-out 30s;
+        @apply transition-transform duration-500 hover:scale-[1.02];
     }
+}
+
+/* GSAP Helper Classes */
+.gsap-reveal {
+    visibility: hidden;
+}
+
+.typing-cursor {
+    @apply text-theme ml-1 font-bold;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
 }

@@ -16,6 +16,10 @@ module.exports = {
         'input-border': '#565666',
         'input': '#2A2A35'
       },
+      boxShadow: {
+        'glow': '0 0 20px rgba(63, 63, 255, 0.4)',
+        'glow-lg': '0 0 40px rgba(63, 63, 255, 0.6)',
+      },
       fontFamily: {
         'poppins': ["'Poppins'", 'sans-serif']
       },

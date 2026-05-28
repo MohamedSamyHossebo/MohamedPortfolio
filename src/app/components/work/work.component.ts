@@ -1,5 +1,7 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-work',
@@ -8,7 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './work.component.html',
   styleUrl: './work.component.css'
 })
-export class WorkComponent {
+export class WorkComponent implements AfterViewInit, OnDestroy {
   projects = [
     { name: 'Artovia Freelance Project', url: 'https://artovia.netlify.app/', image: './assets/artovia.webp' },
     { name: 'Artovia Dashboard Freelance Project', url: '#', image: './assets/artovia-dashboard.webp' },
@@ -21,4 +23,54 @@ export class WorkComponent {
     { name: 'Egyptian Party', url: 'https://mohamedsamyhossebo.github.io/Party/', image: './assets/Egyptian-Party.webp' },
     { name: 'QR Code Login', url: 'https://mohamedsamyhossebo.github.io/Qr-Code/', image: './assets/Login-QR-Code-Demo.webp' }
   ];
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+  }
+
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.initAnimations();
+    }
+  }
+
+  ngOnDestroy() {
+    ScrollTrigger.getAll().filter(st => st.vars.trigger === '.work-section').forEach(st => st.kill());
+  }
+
+  private initAnimations() {
+    gsap.fromTo('.work-header', 
+      { opacity: 0, y: 30 },
+      {
+        scrollTrigger: {
+          trigger: '.work-section',
+          start: 'top 90%',
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+      }
+    );
+
+    gsap.fromTo('.project-card', 
+      { opacity: 0, y: 50 },
+      {
+        scrollTrigger: {
+          trigger: '.projects-grid',
+          start: 'top 90%',
+        },
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: 'power3.out'
+      }
+    );
+    
+    // Force a refresh to catch any layout changes
+    setTimeout(() => ScrollTrigger.refresh(), 100);
+  }
 }

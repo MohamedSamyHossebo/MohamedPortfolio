@@ -1,15 +1,65 @@
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements AfterViewInit, OnDestroy {
   experiencesDate = new Date();
   currentYear = this.experiencesDate.getFullYear();
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+  }
+
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.initAnimations();
+    }
+  }
+
+  ngOnDestroy() {
+    ScrollTrigger.getAll().filter(st => st.vars.trigger === '.experience-section').forEach(st => st.kill());
+  }
+
+  private initAnimations() {
+    gsap.fromTo('.experience-header', 
+      { opacity: 0, y: 30 },
+      {
+        scrollTrigger: {
+          trigger: '.experience-section',
+          start: 'top 90%',
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+      }
+    );
+
+    gsap.fromTo('.experience-item', 
+      { opacity: 0, x: -50 },
+      {
+        scrollTrigger: {
+          trigger: '.experience-timeline',
+          start: 'top 90%',
+        },
+        opacity: 1,
+        x: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power3.out'
+      }
+    );
+  }
 
   getDuration(startDateString: string): string {
     const startDate = new Date(startDateString);
