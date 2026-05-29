@@ -1,0 +1,14 @@
+/*
+  Pre-hide all GSAP-animated elements from the very first paint.
+  Without this, elements are visible for ~100ms before gsap.set() hides them,
+  causing a "flash then disappear" effect.
+  GSAP's autoAlpha: 1 will restore visibility + opacity when the animation runs.
+*/
+.hero-title,
+.hero-image,
+.hero-bio,
+.hero-cta,
+.nav-dot {
+  opacity: 0;
+  visibility: hidden;
+}
