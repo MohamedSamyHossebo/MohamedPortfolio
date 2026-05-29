@@ -51,6 +51,7 @@ export const EXPERIENCES: Experience[] = [
       'PrimeNG',
       'Shadcn/UI',
       'RxJS',
+      'WebRTC',
       'Technical Leadership',
     ],
     socialLinks: {
@@ -104,10 +105,18 @@ export const EXPERIENCES: Experience[] = [
         date: 'September 2025',
         title: 'EasyMed Telemedicine Dashboard',
         description:
-          'Built the dashboard from scratch using Next.js, Shadcn/UI, and WebSockets, delivering real-time patient-doctor communication and a fully responsive medical management interface.',
+          'Healthcare shouldn\'t stop at the clinic door. I built the EasyMed telemedicine dashboard from scratch — a platform that lets doctors and patients meet face-to-face from anywhere, through live video and audio calls that run directly in the browser. No app to download, no friction, just a click and you\'re in the room with your doctor. Beyond the calls, the interface gives medical teams everything they need to manage appointments, track patients, and communicate in real time — all wrapped in a clean, responsive design that feels as trustworthy as the care it delivers.',
+        type: 'achievement',
+      },
+      {
+        date: 'May 2026',
+        title: 'Multi-Country Architecture & Multi-Store Engine',
+        description:
+          'Faced with the challenge of scaling the tires platform across multiple markets simultaneously, I architected a zero-duplication multi-country system from scratch. Designed a dynamic routing layer using Angular\'s :country URL parameter, a reactive CountryService powered by Angular Signals for instant context switching, a custom AssetPipe for serving country-specific brand assets, and an HTTP interceptor that transparently scopes every API call to the active storefront. The result: Egypt and Saudi Arabia now run as fully independent storefronts — each with its own localized pricing, catalog, RTL/LTR layout, and branding — all from a single unified codebase, switchable at runtime without a single page reload.',
         type: 'achievement',
       },
     ],
+
   },
   {
     id: 'freelancer',
