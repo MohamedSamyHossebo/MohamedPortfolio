@@ -1,0 +1,16 @@
+.badge {
+  @apply px-4 py-2 text-sm rounded bg-badge transition-all duration-300;
+}
+
+.secondary-title {
+  @apply text-3xl md:text-4xl font-bold mb-8;
+}
+
+.secondary-title::before {
+  content: "";
+  @apply block w-16 h-1.5 bg-theme rounded-full mb-3;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(63, 63, 255, 0.4);
+}

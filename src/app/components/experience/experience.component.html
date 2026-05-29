@@ -16,217 +16,112 @@
 
       <!-- Timeline Items -->
       <div class="space-y-12">
-        <!-- Current Position -->
-        <article class="experience-item relative flex items-start group">
-          <!-- Timeline Dot -->
-          <div
-            class="timeline-dot absolute left-8 md:left-12 w-4 h-4 rounded-full bg-theme shadow-glow z-10 mt-6 -translate-x-1/2 group-hover:scale-125 transition-transform duration-300"
-          ></div>
+        @for (exp of experiences; track exp.id) {
+          <article class="experience-item relative flex items-start group">
+            <!-- Timeline Dot -->
+            <div
+              class="timeline-dot absolute left-8 md:left-12 w-4 h-4 rounded-full z-10 mt-6 -translate-x-1/2 group-hover:scale-125 transition-transform duration-300"
+              [ngClass]="exp.isCurrent ? 'bg-theme shadow-glow' : 'bg-secondary/30'"
+            ></div>
 
-          <!-- Timeline Card -->
-          <div
-            class="timeline-card ml-16 md:ml-24 w-full rounded-xl p-6 lg:p-8 bg-input/50 backdrop-blur-sm border border-white/10 hover:border-theme/50 transition-all duration-300 hover:shadow-glow"
-          >
-            <div class="flex flex-col lg:flex-row lg:items-start gap-6">
-              <!-- Company Logo -->
-              <figure class="flex-shrink-0">
-                <a href="https://www.linkedin.com/company/alyaqeentech" target="_blank" class="block overflow-hidden rounded-lg">
-                  <img
-                    src="assets/alyaqeen-logo.jpeg"
-                    class="w-16 h-16 lg:w-20 lg:h-20 object-cover transform hover:scale-110 transition-transform duration-500"
-                    alt="Alyaqeen Technology Logo"
-                  />
-                </a>
-                <figcaption class="sr-only">Alyaqeen Technology</figcaption>
-              </figure>
-
-              <!-- Job Details -->
-              <div class="flex-grow">
-                <div
-                  class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
-                >
-                  <h3
-                    class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0 group-hover:text-selected-text transition-colors duration-300"
-                  >
-                    Alyaqeen Technology
-                  </h3>
-                  <div class="flex items-center gap-2 text-sm text-secondary">
-                    <svg
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+            <!-- Timeline Card -->
+            <div
+              [routerLink]="['/experience', exp.id]"
+              class="timeline-card ml-16 md:ml-24 w-full rounded-xl p-6 lg:p-8 bg-input/50 backdrop-blur-sm border border-white/10 hover:border-theme/50 transition-all duration-300 hover:shadow-glow cursor-pointer"
+            >
+              <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+                <!-- Company Logo -->
+                <figure class="flex-shrink-0">
+                  @if (exp.companyLogo) {
+                    <div class="block overflow-hidden rounded-lg">
+                      <img
+                        [src]="exp.companyLogo"
+                        class="w-16 h-16 lg:w-20 lg:h-20 object-cover transform hover:scale-110 transition-transform duration-500"
+                        [alt]="exp.companyName + ' Logo'"
+                      />
+                    </div>
+                  } @else {
+                    <div
+                      class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg bg-nav/50 flex items-center justify-center border border-white/5 group-hover:border-theme/30 transition-colors"
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      ></path>
-                    </svg>
-                    <span>May 2025 - Present ({{ getDuration('2025-05-27') }})</span>
+                      <svg
+                        class="w-8 h-8 text-secondary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2-2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        ></path>
+                      </svg>
+                    </div>
+                  }
+                  <figcaption class="sr-only">{{ exp.companyName }}</figcaption>
+                </figure>
+
+                <!-- Job Details -->
+                <div class="flex-grow">
+                  <div
+                    class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
+                  >
+                    <h3
+                      class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0 group-hover:text-selected-text transition-colors duration-300"
+                    >
+                      {{ exp.companyName }}
+                    </h3>
+                    <div class="flex items-center gap-2 text-sm text-secondary">
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                      <span>
+                        {{ exp.startDate | date:'MMM yyyy' }} - 
+                        {{ exp.isCurrent ? 'Present' : (exp.endDate | date:'MMM yyyy') }}
+                        @if (exp.isCurrent) {
+                          ({{ getDuration(exp.startDate) }})
+                        }
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <div class="flex flex-wrap gap-3 mb-4">
-                  <div class="badge bg-theme/30 text-white border border-theme/50">Mid-Level Front End Developer</div>
-                  <div class="badge bg-badge/50">Full-time</div>
-                  <div class="badge bg-theme/20 text-selected-text border border-theme/30">Current</div>
-                </div>
+                  <div class="flex flex-wrap gap-3 mb-4">
+                    <div class="badge bg-theme/30 text-white border border-theme/50">{{ exp.role }}</div>
+                    <div class="badge bg-badge/50">{{ exp.employmentType }}</div>
+                    @if (exp.isCurrent) {
+                      <div class="badge bg-theme/20 text-selected-text border border-theme/30">Current</div>
+                    }
+                  </div>
 
-                <p class="text-secondary text-sm lg:text-base leading-relaxed">
-                  Orchestrating the front-end development process, architecting scalable
-                  user interfaces, and implementing modern web technologies to
-                  deliver exceptional user experiences.
-                </p>
+                  <p class="text-secondary text-sm lg:text-base leading-relaxed">
+                    {{ exp.summary }}
+                  </p>
 
-                <!-- Skills/Technologies -->
-                <div class="mt-6 flex flex-wrap gap-2">
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Angular</span
-                  >
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >React.js</span
-                  >
-                   <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Next.js</span
-                  >
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >TypeScript</span
-                  >
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >PrimeNG</span
-                  >
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Tailwind CSS</span
-                  >
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Shadcn</span
-                  >
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Socket IO</span
-                  >
-                  <span
-                    class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Team Leadership</span
-                  >
+                  <!-- Skills/Technologies -->
+                  <div class="mt-6 flex flex-wrap gap-2">
+                    @for (skill of exp.skills; track skill) {
+                      <span
+                        class="text-xs bg-nav text-gray-200 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
+                        >{{ skill }}</span
+                      >
+                    }
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </article>
-
-        <!-- Previous Position -->
-        <article class="experience-item relative flex items-start group">
-          <!-- Timeline Dot -->
-          <div
-            class="absolute left-8 md:left-12 w-4 h-4 rounded-full bg-secondary/30 z-10 mt-6 -translate-x-1/2 group-hover:scale-125 transition-transform duration-300"
-          ></div>
-
-          <!-- Timeline Card -->
-          <div
-            class="timeline-card ml-16 md:ml-24 w-full rounded-xl p-6 lg:p-8 bg-input/30 backdrop-blur-sm border border-white/5 hover:border-theme/30 transition-all duration-300 hover:shadow-glow"
-          >
-            <div class="flex flex-col lg:flex-row lg:items-start gap-6">
-              <!-- Company Logo Placeholder -->
-              <figure class="flex-shrink-0">
-                <div
-                  class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg bg-nav/50 flex items-center justify-center border border-white/5 group-hover:border-theme/30 transition-colors"
-                >
-                  <svg
-                    class="w-8 h-8 text-secondary"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    ></path>
-                  </svg>
-                </div>
-                <figcaption class="sr-only">Previous Company</figcaption>
-              </figure>
-
-              <!-- Job Details -->
-              <div class="flex-grow">
-                <div
-                  class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
-                >
-                  <h3
-                    class="text-white text-2xl lg:text-3xl font-semibold mb-2 lg:mb-0 group-hover:text-selected-text transition-colors duration-300"
-                  >
-                    Freelancer
-                  </h3>
-                  <div class="flex items-center gap-2 text-sm text-secondary">
-                    <svg
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      ></path>
-                    </svg>
-                    <span>2023 - 2025</span>
-                  </div>
-                </div>
-
-                <div class="flex flex-wrap gap-3 mb-4">
-                  <div class="badge bg-nav/50">Junior Developer</div>
-                  <div class="badge bg-nav/50">Full-time</div>
-                </div>
-
-                <p class="text-secondary text-sm lg:text-base leading-relaxed">
-                  Developed and maintained complex web applications,
-                  collaborated with cross-functional teams.
-                </p>
-
-                <!-- Skills/Technologies -->
-                <div class="mt-6 flex flex-wrap gap-2">
-                  <span
-                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Angular</span
-                  >
-                  <span
-                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >TypeScript</span
-                  >
-                  <span
-                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >JavaScript</span
-                  >
-                  <span
-                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >HTML5</span
-                  >
-                  <span
-                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Tailwind CSS</span
-                  >
-                  <span
-                    class="text-xs bg-nav/50 text-gray-300 px-3 py-1.5 rounded-full border border-white/5 hover:border-theme/30 transition-colors"
-                    >Bootstrap</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
+          </article>
+        }
       </div>
     </div>
   </section>

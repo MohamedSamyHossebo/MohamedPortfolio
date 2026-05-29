@@ -1,15 +1,18 @@
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Component, AfterViewInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { EXPERIENCES } from '../../data/experience.data';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-experience',
-    imports: [],
+    imports: [CommonModule, RouterModule],
     templateUrl: './experience.component.html',
     styleUrl: './experience.component.css'
 })
 export class ExperienceComponent implements AfterViewInit, OnDestroy {
+  experiences = EXPERIENCES;
   experiencesDate = new Date();
   currentYear = this.experiencesDate.getFullYear();
 

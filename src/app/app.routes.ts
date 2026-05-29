@@ -9,6 +9,6 @@ export const routes: Routes = [
     { path: 'work', component: WorkComponent },
     { path: 'clients', component: ClientsComponent },
     { path: 'hire', component: HireComponent },
+    { path: 'experience/:id', loadComponent: () => import('./components/experience-detail/experience-detail.component').then(m => m.ExperienceDetailComponent) },
     { path: '**', redirectTo: 'home' }
-
 ];
