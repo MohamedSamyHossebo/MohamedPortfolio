@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="indigo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Theme Preview</title>
+    <!-- Modern Premium Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Define the themes */
+        :root[data-theme="indigo"] {
+            --color-theme-rgb: 99, 102, 241;          /* Indigo */
+            --color-theme-hover-rgb: 79, 70, 229;
+            --color-selected-text-rgb: 45, 212, 191;  /* Mint/Teal */
+            --color-secondary-rgb: 156, 163, 175;
+            --color-body-rgb: 15, 23, 42;             /* Deep slate */
+            --color-nav-rgb: 30, 41, 59;
+            --color-badge-rgb: 51, 65, 85;
+            --color-input-rgb: 30, 41, 59;
+            --color-input-border-rgb: 71, 85, 105;
+            --color-timeline-dot-end: #2dd4bf;
+        }
+
+        :root[data-theme="amber"] {
+            --color-theme-rgb: 245, 158, 11;          /* Amber */
+            --color-theme-hover-rgb: 217, 119, 6;
+            --color-selected-text-rgb: 249, 115, 22;  /* Orange */
+            --color-secondary-rgb: 161, 161, 170;
+            --color-body-rgb: 24, 24, 27;             /* Zinc Charcoal */
+            --color-nav-rgb: 39, 39, 42;
+            --color-badge-rgb: 63, 63, 70;
+            --color-input-rgb: 39, 39, 42;
+            --color-input-border-rgb: 82, 82, 91;
+            --color-timeline-dot-end: #f97316;
+        }
+
+        :root[data-theme="emerald"] {
+            --color-theme-rgb: 16, 185, 129;          /* Emerald */
+            --color-theme-hover-rgb: 5, 150, 105;
+            --color-selected-text-rgb: 110, 231, 183; /* Mint */
+            --color-secondary-rgb: 156, 163, 175;
+            --color-body-rgb: 17, 24, 39;             /* Cool dark */
+            --color-nav-rgb: 31, 41, 55;
+            --color-badge-rgb: 55, 65, 81;
+            --color-input-rgb: 31, 41, 55;
+            --color-input-border-rgb: 75, 85, 99;
+            --color-timeline-dot-end: #6ee7b7;
+        }
+
+        /* Set helper properties */
+        :root {
+            --color-theme: rgb(var(--color-theme-rgb));
+            --color-theme-hover: rgb(var(--color-theme-hover-rgb));
+            --color-body: rgb(var(--color-body-rgb));
+            --color-nav: rgb(var(--color-nav-rgb));
+            --color-badge: rgb(var(--color-badge-rgb));
+            --color-input: rgb(var(--color-input-rgb));
+            --color-input-border: rgb(var(--color-input-border-rgb));
+            --color-selected-text: rgb(var(--color-selected-text-rgb));
+            --color-secondary: rgb(var(--color-secondary-rgb));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--color-body);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .controls {
+            background-color: rgba(var(--color-nav-rgb), 0.8);
+            border: 1px solid rgba(var(--color-input-border-rgb), 0.3);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            gap: 15px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .btn-theme {
+            background: none;
+            border: none;
+            color: var(--color-secondary);
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme.active {
+            background-color: var(--color-theme);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(var(--color-theme-rgb), 0.4);
+        }
+
+        .preview-container {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        /* Hero Section Component */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--color-theme);
+            text-shadow: 0 0 20px rgba(var(--color-theme-rgb), 0.2);
+        }
+
+        .hero p {
+            color: var(--color-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* UI elements */
+        .btn-primary {
+            background-color: var(--color-theme);
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(var(--color-theme-rgb), 0.3);
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-theme-hover);
+            box-shadow: 0 0 25px rgba(var(--color-theme-rgb), 0.5);
+            transform: translateY(-2px);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background-color: rgba(var(--color-badge-rgb), 0.5);
+            color: var(--color-secondary);
+            border: 1px solid rgba(var(--color-input-border-rgb), 0.2);
+            margin: 5px;
+        }
+
+        .badge.accent {
+            background-color: rgba(var(--color-theme-rgb), 0.15);
+            color: var(--color-selected-text);
+            border: 1px solid rgba(var(--color-theme-rgb), 0.3);
+        }
+
+        /* Cards & Timelines */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: var(--color-theme);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(var(--color-theme-rgb), 0.6);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(var(--color-badge-rgb), 0.4) 0%, rgba(var(--color-body-rgb), 0.9) 100%);
+            border: 1px solid rgba(var(--color-input-border-rgb), 0.25);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            border-color: rgba(var(--color-theme-rgb), 0.5);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(var(--color-theme-rgb), 0.1);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--color-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Timeline representation */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(var(--color-input-border-rgb), 0.3) 0%, var(--color-theme) 50%, rgba(var(--color-input-border-rgb), 0.3) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -30px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-theme) 0%, var(--color-timeline-dot-end) 100%);
+            box-shadow: 0 0 10px rgba(var(--color-theme-rgb), 0.6);
+        }
+
+        .timeline-item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item-date {
+            font-size: 0.85rem;
+            color: var(--color-theme);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .timeline-item-desc {
+            color: var(--color-secondary);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button class="btn-theme active" onclick="setTheme('indigo')" id="btn-indigo">1. Indigo & Mint</button>
+        <button class="btn-theme" onclick="setTheme('amber')" id="btn-amber">2. Vibrant Amber</button>
+        <button class="btn-theme" onclick="setTheme('emerald')" id="btn-emerald">3. Forest Emerald</button>
+    </div>
+
+    <div class="preview-container">
+        <!-- Hero Preview -->
+        <div class="hero">
+            <p>Welcome to my Interactive Sandbox</p>
+            <h1>Fullstack <span>Developer</span></h1>
+            <p>Specialized in crafting scalable backend architectures and highly polished, modern user interfaces.</p>
+            <button class="btn-primary">View Projects</button>
+        </div>
+
+        <!-- Badges & Tech Stack Preview -->
+        <div>
+            <h2 class="section-title">Core Competencies</h2>
+            <div>
+                <span class="badge accent">Angular</span>
+                <span class="badge accent">TypeScript</span>
+                <span class="badge accent">Node.js</span>
+                <span class="badge accent">Tailwind CSS</span>
+                <span class="badge">NestJS</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">Docker</span>
+                <span class="badge">GSAP Animations</span>
+            </div>
+        </div>
+
+        <!-- Project Cards Preview -->
+        <div>
+            <h2 class="section-title">Recent Work</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Multi-Tenant E-commerce Engine</h3>
+                    <p>Designed a microservice backend supporting multi-currency and real-time localized inventory routing.</p>
+                    <button class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Case Study</button>
+                </div>
+                <div class="card">
+                    <h3>Analytics Dashboard Platform</h3>
+                    <p>Polished Frontend dashboard utilizing reactive signals, dynamic charting, and real-time WebSocket state.</p>
+                    <button class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Case Study</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Preview -->
+        <div>
+            <h2 class="section-title">Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-item-date">2024 - Present</span>
+                    <h3 class="timeline-item-title">Senior Fullstack Engineer</h3>
+                    <p class="timeline-item-desc">Leading frontend architecture migrations and integrating serverless APIs on high-traffic web applications.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-item-date">2022 - 2024</span>
+                    <h3 class="timeline-item-title">Front-End Developer</h3>
+                    <p class="timeline-item-desc">Crafted interactive UI design systems using Angular, Sass, and GSAP, improving overall performance metrics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            
+            // Update button styles
+            const buttons = document.querySelectorAll('.btn-theme');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById('btn-' + themeName).classList.add('active');
+        }
+    </script>
+</body>
+</html>

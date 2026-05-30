@@ -21,7 +21,7 @@
 }
 
 .menu-overlay {
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: var(--color-menu-overlay);
 }
 
 .text-selected-text {
@@ -35,5 +35,5 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #3B82F6;
+    background-color: var(--color-selected-underline);
 }

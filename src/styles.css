@@ -3,6 +3,48 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Brand Colors (RGB format) */
+  --color-theme-rgb: 16, 185, 129;          /* Emerald Green (10b981) */
+  --color-theme-hover-rgb: 5, 150, 105;     /* Darker Emerald (059669) */
+  --color-selected-text-rgb: 110, 231, 183; /* Mint Accent (6ee7b7) */
+  --color-secondary-rgb: 156, 163, 175;     /* Slate Muted (9ca3af) */
+
+  /* Backgrounds (RGB format) */
+  --color-body-rgb: 17, 24, 39;             /* Cool Gray-900 (111827) */
+  --color-nav-rgb: 31, 41, 55;              /* Gray-800 (1f2937) */
+  --color-badge-rgb: 55, 65, 81;            /* Gray-700 (374151) */
+  --color-input-rgb: 31, 41, 55;
+  --color-input-border-rgb: 75, 85, 99;
+  
+  /* Helper HEX variables (for non-tailwind CSS files) */
+  --color-theme: rgb(var(--color-theme-rgb));
+  --color-theme-hover: rgb(var(--color-theme-hover-rgb));
+  --color-body: rgb(var(--color-body-rgb));
+  --color-nav: rgb(var(--color-nav-rgb));
+  --color-badge: rgb(var(--color-badge-rgb));
+  --color-input: rgb(var(--color-input-rgb));
+  --color-input-border: rgb(var(--color-input-border-rgb));
+  --color-selected-text: rgb(var(--color-selected-text-rgb));
+  --color-secondary: rgb(var(--color-secondary-rgb));
+
+  /* Timelines & Cards */
+  --color-timeline-line-start: #1f2937;
+  --color-timeline-line-mid: var(--color-theme);
+  --color-timeline-line-end: #1f2937;
+  --color-timeline-dot-start: var(--color-theme);
+  --color-timeline-dot-end: #6ee7b7;
+  --color-card-bg-start: rgba(31, 41, 55, 0.85);
+  --color-card-bg-end: rgba(17, 24, 39, 0.95);
+  --color-card-border: rgba(75, 85, 99, 0.4);
+  --color-card-border-hover: rgba(var(--color-theme-rgb), 0.6);
+  
+  /* Overlays & Others */
+  --color-menu-overlay: rgba(17, 24, 39, 0.98);
+  --color-selected-underline: var(--color-selected-text);
+  --color-text-primary: #ffffff;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -30,7 +72,7 @@
 
 body {
     @apply font-poppins text-white leading-relaxed tracking-wide;
-    background-color: #17171F;
+    background-color: var(--color-body);
 }
 
 .left-percentage {

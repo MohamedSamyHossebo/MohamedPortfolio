@@ -12,5 +12,5 @@
 }
 
 .shadow-glow {
-  box-shadow: 0 0 20px rgba(63, 63, 255, 0.4);
+  box-shadow: 0 0 20px rgba(var(--color-theme-rgb), 0.4);
 }

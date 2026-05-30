@@ -21,12 +21,12 @@
 
 .fade-left {
   left: 0;
-  background: linear-gradient(to right, var(--color-bg, #0a0a0a), transparent);
+  background: linear-gradient(to right, var(--color-body), transparent);
 }
 
 .fade-right {
   right: 0;
-  background: linear-gradient(to left, var(--color-bg, #0a0a0a), transparent);
+  background: linear-gradient(to left, var(--color-body), transparent);
 }
 
 /* ── Track ── */
