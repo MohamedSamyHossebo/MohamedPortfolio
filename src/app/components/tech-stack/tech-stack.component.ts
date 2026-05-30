@@ -108,18 +108,18 @@ export class TechStackComponent implements AfterViewInit, OnDestroy {
       },
     });
 
-    const pause = () => {
-      this.tweenLeft?.pause();
-      this.tweenRight?.pause();
-    };
-    const play = () => {
-      this.tweenLeft?.play();
-      this.tweenRight?.play();
-    };
-    leftEl.parentElement?.addEventListener('mouseenter', pause);
-    leftEl.parentElement?.addEventListener('mouseleave', play);
-    rightEl.parentElement?.addEventListener('mouseenter', pause);
-    rightEl.parentElement?.addEventListener('mouseleave', play);
+    // const pause = () => {
+    //   this.tweenLeft?.pause();
+    //   this.tweenRight?.pause();
+    // };
+    // const play = () => {
+    //   this.tweenLeft?.play();
+    //   this.tweenRight?.play();
+    // };
+    // leftEl.parentElement?.addEventListener('mouseenter', pause);
+    // leftEl.parentElement?.addEventListener('mouseleave', play);
+    // rightEl.parentElement?.addEventListener('mouseenter', pause);
+    // rightEl.parentElement?.addEventListener('mouseleave', play);
   }
 
   ngOnDestroy() {
