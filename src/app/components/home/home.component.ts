@@ -5,10 +5,11 @@ import { WorkComponent } from "../work/work.component";
 import { ClientsComponent } from "../clients/clients.component";
 import { HireComponent } from "../hire/hire.component";
 import { ExperienceComponent } from "../experience/experience.component";
+import { TechStackComponent } from "../tech-stack/tech-stack.component";
 
 @Component({
     selector: 'app-home',
-    imports: [HeaderComponent, HeroComponent, WorkComponent, ClientsComponent, HireComponent, ExperienceComponent],
+    imports: [HeaderComponent, HeroComponent, WorkComponent, ClientsComponent, HireComponent, ExperienceComponent, TechStackComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })

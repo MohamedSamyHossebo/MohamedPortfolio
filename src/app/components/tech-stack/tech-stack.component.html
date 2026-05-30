@@ -1,0 +1,38 @@
+<section class="tech-stack-section mt-24 mx-auto px-8 md:px-14 lg:px-24">
+  <div class="tech-stack-header mb-12">
+    <h2 class="secondary-title">Tech Stack</h2>
+    <p class="section-paragraph">Technologies I work with</p>
+  </div>
+
+  <!-- Row 1 — scrolls LEFT -->
+  <div class="marquee-wrapper overflow-hidden relative mb-8">
+    <div class="fade-left"></div>
+    <div class="fade-right"></div>
+    <div #trackLeft class="marquee-track flex gap-14 w-max">
+      @for (tech of displayTechs; track $index) {
+        <div class="tech-card flex flex-col items-center gap-4 cursor-default select-none w-28">
+          <img [src]="tech.logo" [alt]="tech.name"
+               class="w-16 h-16 object-contain transition-transform duration-300 hover:scale-125 logo-img"
+               loading="lazy">
+          <span class="text-secondary text-sm font-semibold tracking-wide text-center">{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Row 2 — scrolls RIGHT -->
+  <div class="marquee-wrapper overflow-hidden relative">
+    <div class="fade-left"></div>
+    <div class="fade-right"></div>
+    <div #trackRight class="marquee-track flex gap-14 w-max">
+      @for (tech of displayTechsReversed; track $index) {
+        <div class="tech-card flex flex-col items-center gap-4 cursor-default select-none w-28">
+          <img [src]="tech.logo" [alt]="tech.name"
+               class="w-16 h-16 object-contain transition-transform duration-300 hover:scale-125 logo-img"
+               loading="lazy">
+          <span class="text-secondary text-sm font-semibold tracking-wide text-center">{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

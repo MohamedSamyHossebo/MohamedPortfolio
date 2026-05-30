@@ -1,0 +1,56 @@
+/* ── Wrapper: clips overflow and positions edge fades ── */
+.marquee-wrapper {
+  position: relative;
+}
+
+/* Logo images — screen blend removes dark/black SVG backgrounds on dark pages */
+.logo-img {
+  mix-blend-mode: screen;
+}
+
+/* Edge fade gradients */
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg, #0a0a0a), transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg, #0a0a0a), transparent);
+}
+
+/* ── Track ── */
+.marquee-track {
+  will-change: transform;
+}
+
+/* ── Individual card ── */
+.tech-card {
+  group: card;
+}
+
+.tech-card:hover .tech-logo svg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.tech-logo svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* ── Section header ── */
+.tech-stack-header p {
+  margin-top: 0.5rem;
+}
