@@ -48,17 +48,17 @@ export class TechStackComponent implements AfterViewInit, OnDestroy {
     { name: 'CSS3', logo: `${DEVICON}/css3/css3-original.svg` },
     { name: 'Node.js', logo: `${DEVICON}/nodejs/nodejs-original.svg` },
     { name: 'Git', logo: `${DEVICON}/git/git-original.svg` },
+    { name: 'GitLab', logo: `${DEVICON}/gitlab/gitlab-original.svg` },
     { name: 'Sass', logo: `${DEVICON}/sass/sass-original.svg` },
     {
       name: 'TailwindCSS',
       logo: `${DEVICON}/tailwindcss/tailwindcss-original.svg`,
     },
     { name: 'MongoDB', logo: `${DEVICON}/mongodb/mongodb-original.svg` },
+    { name: 'Mongoose', logo: './assets/mongoose.svg' },
     { name: 'Express', logo: `${DEVICON}/express/express-original.svg`, light: true },
-    {
-      name: 'PostgreSQL',
-      logo: `${DEVICON}/postgresql/postgresql-original.svg`,
-    },
+    { name: 'MySQL', logo: `${DEVICON}/mysql/mysql-original.svg` },
+    { name: 'Sequelize', logo: `${DEVICON}/sequelize/sequelize-original.svg` },
     { name: 'Docker', logo: `${DEVICON}/docker/docker-original.svg` },
   ];
 
