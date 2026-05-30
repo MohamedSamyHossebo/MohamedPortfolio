@@ -1,10 +1,18 @@
-import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import {
+  ApplicationConfig,
+  provideZonelessChangeDetection,
+} from '@angular/core';
+import { provideRouter, withHashLocation } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-
-import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 
+import { routes } from './app.routes';
+
 export const appConfig: ApplicationConfig = {
-  providers: [provideZonelessChangeDetection(), provideRouter(routes), provideClientHydration(), provideHttpClient(withFetch())]
+  providers: [
+    provideZonelessChangeDetection(),
+    provideRouter(routes, withHashLocation()),
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
+  ],
 };
