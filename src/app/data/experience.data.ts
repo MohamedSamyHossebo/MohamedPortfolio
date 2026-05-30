@@ -149,7 +149,7 @@ export const EXPERIENCES: Experience[] = [
       },
       {
         date: '2024',
-        title: 'Artovia E-Commerce Suite',
+        title: 'Artovia E-Commerce Site',
         description:
           'Designed and built a full e-commerce solution for Artovia comprising two deliverables: a customer-facing storefront and a dedicated admin dashboard for inventory, order, and product management. Both built with Angular and TypeScript, with a focus on clean component architecture and maintainable code.',
         type: 'achievement',
