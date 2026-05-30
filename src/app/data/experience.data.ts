@@ -36,7 +36,7 @@ export const EXPERIENCES: Experience[] = [
     startDate: '2025-05-01',
     isCurrent: true,
     summary:
-      'Orchestrating the front-end lifecycle, architecting a scalable platform using modern Angular 17+, and conducting rigorous code reviews to enforce strict clean code standards. Delivering high-impact products including a multilingual e-commerce platform, an enterprise analytics dashboard, and a telemedicine interface.',
+      'Leading the front-end architecture and development lifecycle using Angular 17+, with a focus on scalable patterns, clean code standards, and rigorous code reviews. Driving technical decisions across a range of products and mentoring junior developers on RxJS and component design.',
     skills: [
       'Angular 17+',
       'Next.js',
@@ -105,18 +105,17 @@ export const EXPERIENCES: Experience[] = [
         date: 'September 2025',
         title: 'EasyMed Telemedicine Dashboard',
         description:
-          'Healthcare shouldn\'t stop at the clinic door. I built the EasyMed telemedicine dashboard from scratch — a platform that lets doctors and patients meet face-to-face from anywhere, through live video and audio calls that run directly in the browser. No app to download, no friction, just a click and you\'re in the room with your doctor. Beyond the calls, the interface gives medical teams everything they need to manage appointments, track patients, and communicate in real time — all wrapped in a clean, responsive design that feels as trustworthy as the care it delivers.',
+          'Built the EasyMed telemedicine dashboard from scratch — enabling browser-based video and audio consultations via WebRTC with no installation required. The platform covers appointment management, patient tracking, and real-time team communication, all within a responsive interface designed for clinical workflows.',
         type: 'achievement',
       },
       {
         date: 'May 2026',
         title: 'Multi-Country Architecture & Multi-Store Engine',
         description:
-          'Faced with the challenge of scaling the tires platform across multiple markets simultaneously, I architected a zero-duplication multi-country system from scratch. Designed a dynamic routing layer using Angular\'s :country URL parameter, a reactive CountryService powered by Angular Signals for instant context switching, a custom AssetPipe for serving country-specific brand assets, and an HTTP interceptor that transparently scopes every API call to the active storefront. The result: Egypt and Saudi Arabia now run as fully independent storefronts — each with its own localized pricing, catalog, RTL/LTR layout, and branding — all from a single unified codebase, switchable at runtime without a single page reload.',
+          'Scaled the tires platform to support Egypt and Saudi Arabia as independent storefronts from a single codebase — each with its own localized pricing, catalog, RTL/LTR layout, and branding, switchable at runtime without a page reload.',
         type: 'achievement',
       },
     ],
-
   },
   {
     id: 'freelancer',
@@ -128,7 +127,7 @@ export const EXPERIENCES: Experience[] = [
     endDate: '2025-05-01',
     isCurrent: false,
     summary:
-      'Developed and maintained complex web applications, collaborated with cross-functional teams.',
+      'Delivered client projects end-to-end as a freelance front-end developer, handling requirements gathering, UI architecture, and implementation. Primary focus on Angular-based solutions for small and mid-sized businesses.',
     skills: [
       'Angular',
       'TypeScript',
@@ -150,9 +149,9 @@ export const EXPERIENCES: Experience[] = [
       },
       {
         date: '2024',
-        title: 'Completed E-commerce Project',
+        title: 'Artovia E-Commerce Suite',
         description:
-          'Successfully delivered a full-featured e-commerce platform using Angular.',
+          'Designed and built a full e-commerce solution for Artovia comprising two deliverables: a customer-facing storefront and a dedicated admin dashboard for inventory, order, and product management. Both built with Angular and TypeScript, with a focus on clean component architecture and maintainable code.',
         type: 'achievement',
       },
     ],
