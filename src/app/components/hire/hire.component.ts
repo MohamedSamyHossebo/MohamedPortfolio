@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, inject, AfterViewInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, AfterViewInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ContactService } from '../../services/contact.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,14 +9,21 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
     selector: 'app-hire',
     imports: [ReactiveFormsModule],
     templateUrl: './hire.component.html',
-    styleUrl: './hire.component.css'
+    styleUrl: './hire.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HireComponent implements AfterViewInit, OnDestroy {
   fb = inject(FormBuilder);
+  contactService = inject(ContactService);
+
+  isLoading = signal(false);
+  successMessage = signal<string | null>(null);
+  errorMessage = signal<string | null>(null);
+
   hireForm = this.fb.group({
-    name: ['', Validators.required],
+    name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
-    message: ['', Validators.required]
+    message: ['', [Validators.required, Validators.minLength(10)]]
   });
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
@@ -75,17 +83,25 @@ export class HireComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    const { name, email, message } = this.hireForm.value as any;
+    this.isLoading.set(true);
+    this.successMessage.set(null);
+    this.errorMessage.set(null);
 
-    const subject = encodeURIComponent(`Hire Request from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+    const { name, email, message } = this.hireForm.value as { name: string; email: string; message: string };
 
-    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=eng.mohamedsamyhossebo@gmail.com&su=${subject}&body=${body}`;
-
-    if (isPlatformBrowser(this.platformId)) {
-      window.open(gmailURL, '_blank');
-    }
+    this.contactService.send({ name, email, message }).subscribe({
+      next: (res) => {
+        this.isLoading.set(false);
+        this.successMessage.set(res.message ?? 'Message sent successfully!');
+        this.hireForm.reset();
+      },
+      error: (err) => {
+        this.isLoading.set(false);
+        const apiErrors: string[] = err?.error?.errors;
+        this.errorMessage.set(
+          apiErrors?.length ? apiErrors.join(' ') : 'Something went wrong. Please try again.'
+        );
+      }
+    });
   }
 }

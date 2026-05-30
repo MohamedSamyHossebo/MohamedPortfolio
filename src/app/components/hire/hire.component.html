@@ -7,28 +7,79 @@
 
         <div class="hire-content w-full grid lg:grid-cols-2 gap-8 lg:gap-32 mt-24">
             <form [formGroup]="hireForm" (ngSubmit)="sendMail()" class="hire-form space-y-12">
+                <!-- Name -->
                 <div class="group">
                     <label for="name" class="text-white block mb-6 text-xl font-bold group-focus-within:text-selected-text transition-colors">Name</label>
                     <input id="name" formControlName="name" placeholder="Enter your name"
+                        [class.border-red-500]="hireForm.get('name')!.invalid && hireForm.get('name')!.touched"
                         class="w-full border border-white/10 bg-input/50 backdrop-blur-sm px-4 py-4 rounded-lg focus:outline-none focus:border-theme transition-all duration-300">
+                    @if (hireForm.get('name')!.invalid && hireForm.get('name')!.touched) {
+                        <p class="mt-2 text-sm text-red-400">
+                            @if (hireForm.get('name')!.hasError('required')) { Name is required. }
+                            @else if (hireForm.get('name')!.hasError('minlength')) { Name must be at least 2 characters. }
+                        </p>
+                    }
                 </div>
 
+                <!-- Email -->
                 <div class="group">
                     <label for="email" class="text-white block mb-6 text-xl font-bold group-focus-within:text-selected-text transition-colors">Email</label>
                     <input id="email" type="email" formControlName="email" placeholder="Enter your email"
+                        [class.border-red-500]="hireForm.get('email')!.invalid && hireForm.get('email')!.touched"
                         class="w-full border border-white/10 bg-input/50 backdrop-blur-sm px-4 py-4 rounded-lg focus:outline-none focus:border-theme transition-all duration-300">
+                    @if (hireForm.get('email')!.invalid && hireForm.get('email')!.touched) {
+                        <p class="mt-2 text-sm text-red-400">
+                            @if (hireForm.get('email')!.hasError('required')) { Email is required. }
+                            @else if (hireForm.get('email')!.hasError('email')) { Please enter a valid email address. }
+                        </p>
+                    }
                 </div>
 
+                <!-- Message -->
                 <div class="group">
                     <label for="message" class="text-white block mb-6 text-xl font-bold group-focus-within:text-selected-text transition-colors">Message</label>
                     <textarea id="message" formControlName="message" placeholder="Type your message here"
+                        [class.border-red-500]="hireForm.get('message')!.invalid && hireForm.get('message')!.touched"
                         class="w-full border border-white/10 bg-input/50 backdrop-blur-sm px-4 py-4 h-56 resize-none rounded-lg focus:outline-none focus:border-theme transition-all duration-300"></textarea>
+                    @if (hireForm.get('message')!.invalid && hireForm.get('message')!.touched) {
+                        <p class="mt-2 text-sm text-red-400">
+                            @if (hireForm.get('message')!.hasError('required')) { Message is required. }
+                            @else if (hireForm.get('message')!.hasError('minlength')) { Message must be at least 10 characters. }
+                        </p>
+                    }
                 </div>
 
-                <button type="submit"
-                    class="px-8 py-3 bg-theme text-white font-bold rounded-lg shadow-glow hover:shadow-glow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1">
-                    Send it!
+
+                <button type="submit" [disabled]="isLoading()"
+                    class="flex items-center gap-2 px-8 py-3 bg-theme text-white font-bold rounded-lg shadow-glow hover:shadow-glow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                    @if (isLoading()) {
+                        <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                        </svg>
+                        Sending...
+                    } @else {
+                        Send it!
+                    }
                 </button>
+
+                @if (successMessage()) {
+                    <div class="flex items-center gap-3 mt-4 px-4 py-3 rounded-lg bg-green-500/15 border border-green-500/40 text-green-400">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <p class="text-sm font-medium">{{ successMessage() }}</p>
+                    </div>
+                }
+
+                @if (errorMessage()) {
+                    <div class="flex items-center gap-3 mt-4 px-4 py-3 rounded-lg bg-red-500/15 border border-red-500/40 text-red-400">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18A9 9 0 0012 3z"/>
+                        </svg>
+                        <p class="text-sm font-medium">{{ errorMessage() }}</p>
+                    </div>
+                }
             </form>
 
 
