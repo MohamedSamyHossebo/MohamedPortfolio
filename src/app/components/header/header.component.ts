@@ -23,7 +23,7 @@ export class HeaderComponent {
 
   @HostListener('window:scroll')
   onScroll() {
-    const sections = ['hero', 'work','experience', 'clients', 'hire'];
+    const sections = ['hero', 'tech-stack', 'work', 'experience', 'clients', 'hire'];
     const scrollPosition = window.scrollY + 100;
 
     for (const section of sections) {

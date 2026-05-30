@@ -79,7 +79,7 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    const sections = ['hero', 'work', 'experience', 'clients', 'hire'];
+    const sections = ['hero', 'tech-stack', 'work', 'experience', 'clients', 'hire'];
     let currentSection = 'hero';
 
     for (const section of sections) {

@@ -17,8 +17,19 @@
             aria-label="Go to Home section"
           >
             <span
-              class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="whitespace-nowrap bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >Home</span
+            >
+          </a>
+          <a
+            (click)="scrollTo('tech-stack')"
+            class="nav-dot block w-7 h-7 rounded-full border-4 border-nav bg-body cursor-pointer relative group"
+            [class.selected-circle]="activeSection === 'tech-stack'"
+            aria-label="Go to Tech Stack section"
+          >
+            <span
+              class="whitespace-nowrap bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >Tech Stack</span
             >
           </a>
           <a
@@ -28,7 +39,7 @@
             aria-label="Go to Work section"
           >
             <span
-              class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="whitespace-nowrap bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >Work</span
             >
           </a>
@@ -39,7 +50,7 @@
             aria-label="Go to Experience section"
           >
             <span
-              class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="whitespace-nowrap bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >Experience</span
             >
           </a>
@@ -51,7 +62,7 @@
             aria-label="Go to Clients section"
           >
             <span
-              class="bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="whitespace-nowrap bg-black px-2 py-1 rounded-md ml-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >Clients</span
             >
           </a>

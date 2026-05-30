@@ -7,6 +7,8 @@
         <nav class="hidden md:flex space-x-12 items-center" aria-label="Main Navigation">
             <a (click)="scrollTo('hero')" [class.text-theme]="activeSection === 'hero'"
                 class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to Home section">Home</a>
+            <a (click)="scrollTo('tech-stack')" [class.text-theme]="activeSection === 'tech-stack'"
+                class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to Tech Stack section">Tech Stack</a>
 
             <a (click)="scrollTo('work')" [class.text-theme]="activeSection === 'work'"
                 class="cursor-pointer hover:text-theme transition-colors" aria-label="Go to My Work section">My Work</a>
@@ -43,6 +45,9 @@
             <a (click)="scrollTo('hero')" [class.text-theme]="activeSection === 'hero'"
                 class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
                 aria-label="Go to Home section">Home</a>
+            <a (click)="scrollTo('tech-stack')" [class.text-theme]="activeSection === 'tech-stack'"
+                class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
+                aria-label="Go to Tech Stack section">Tech Stack</a>
 
             <a (click)="scrollTo('work')" [class.text-theme]="activeSection === 'work'"
                 class="py-4 text-2xl border-b border-nav hover:text-theme transition-colors cursor-pointer text-center font-bold"
