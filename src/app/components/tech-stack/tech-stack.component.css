@@ -1,6 +1,7 @@
 /* ── Wrapper: clips overflow and positions edge fades ── */
 .marquee-wrapper {
   position: relative;
+  padding: 20px 0;
 }
 
 /* Logo images — screen blend removes dark/black SVG backgrounds on dark pages */

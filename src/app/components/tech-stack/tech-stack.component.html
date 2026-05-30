@@ -9,7 +9,7 @@
   <div class="marquee-wrapper overflow-hidden relative mb-8">
     <div class="fade-left"></div>
     <div class="fade-right"></div>
-    <div #trackLeft class="marquee-track flex gap-14 w-max">
+    <div #trackLeft class="marquee-track flex gap-14 w-max m-5">
       @for (tech of displayTechs; track $index) {
         <div class="tech-card flex flex-col items-center gap-4 cursor-default select-none w-28">
           <img [src]="tech.logo" [alt]="tech.name"
@@ -25,7 +25,7 @@
   <div class="marquee-wrapper overflow-hidden relative">
     <div class="fade-left"></div>
     <div class="fade-right"></div>
-    <div #trackRight class="marquee-track flex gap-14 w-max">
+    <div #trackRight class="marquee-track flex gap-14 w-max m-5">
       @for (tech of displayTechsReversed; track $index) {
         <div class="tech-card flex flex-col items-center gap-4 cursor-default select-none w-28">
           <img [src]="tech.logo" [alt]="tech.name"
