@@ -60,6 +60,12 @@ export class TechStackComponent implements AfterViewInit, OnDestroy {
     { name: 'MySQL', logo: `${DEVICON}/mysql/mysql-original.svg` },
     { name: 'Sequelize', logo: `${DEVICON}/sequelize/sequelize-original.svg` },
     { name: 'Docker', logo: `${DEVICON}/docker/docker-original.svg` },
+    { name: 'Bash', logo: `${DEVICON}/bash/bash-original.svg` },
+    { name: 'Linux', logo: `${DEVICON}/linux/linux-original.svg` },
+    { name: 'Redis', logo: `${DEVICON}/redis/redis-original.svg` },
+    { name: 'Postman', logo: `${DEVICON}/postman/postman-original.svg` },
+    { name: 'API Dog', logo: 'https://cdn.jsdelivr.net/gh/callback-io/allogo@main/public/logos/apidog/icon.svg' },
+    { name: 'Firebase', logo: `${DEVICON}/firebase/firebase-plain.svg` },
   ];
 
   get displayTechs(): Tech[] {
