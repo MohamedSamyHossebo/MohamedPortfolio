@@ -56,7 +56,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     socialLinks: {
       linkedin: 'https://www.linkedin.com/company/alyaqeentech',
-      website: 'https://alyaqeen.com',
+      website: 'https://alyaqeen01.com/',
     },
     timeline: [
       {
@@ -113,6 +113,13 @@ export const EXPERIENCES: Experience[] = [
         title: 'Multi-Country Architecture & Multi-Store Engine',
         description:
           'Scaled the tires platform to support Egypt and Saudi Arabia as independent storefronts from a single codebase — each with its own localized pricing, catalog, RTL/LTR layout, and branding, switchable at runtime without a page reload.',
+        type: 'achievement',
+      },
+      {
+        date: 'July 2026',
+        title: 'Icon Event Registration Portal',
+        description:
+          'Deployed the Icon Event Registration Portal platform to production, making it available to users worldwide.',
         type: 'achievement',
       },
     ],
